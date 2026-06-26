@@ -11,7 +11,7 @@ const segments = [
   {
     icon: Store,
     title: 'Comércio',
-    description: 'Lojas, varejos e atacados com PDV e controle de estoque.',
+    description: 'Lojas, varejos e atacados com caixa e controle de estoque.',
   },
   {
     icon: Stethoscope,
@@ -26,7 +26,7 @@ const segments = [
   {
     icon: UtensilsCrossed,
     title: 'Restaurantes',
-    description: 'PDV, comandas, delivery e controle de mesas.',
+    description: 'Caixa, comandas, delivery e controle de mesas.',
   },
   {
     icon: Wheat,
@@ -69,9 +69,9 @@ const SegmentsSection = () => {
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <segment.icon size={28} className="text-primary" />
               </div>
-              <div>
+              <div className="flex items-center justify-center h-full">
                 <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{segment.title}</h3>
-                <p className="text-sm text-muted-foreground">{segment.description}</p>
+                {/* <p className="text-sm text-muted-foreground">{segment.description}</p> */}
               </div>
             </div>
           ))}

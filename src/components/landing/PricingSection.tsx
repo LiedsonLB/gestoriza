@@ -29,22 +29,22 @@ const plans = [
       "Financeiro"
     ]
   },
-  {
-    "id": "comercial-enterprise",
-    "name": "Comercial Enterprise",
-    "segment": "Comercial",
-    "description": "Operações robustas e personalizadas",
-    "price": 299,
-    "featured": false,
-    "image": "https://www.pontotel.com.br/local/wp-content/uploads/2024/07/o-que-e-enterprise.webp",
-    "features": [
-      "Tudo do Comercial Pro",
-      // "Usuários ilimitados",
-      "Automações avançadas",
-      "Integrações personalizadas",
-      "Suporte prioritário"
-    ]
-  },
+  // {
+  //   "id": "comercial-enterprise",
+  //   "name": "Comercial Enterprise",
+  //   "segment": "Comercial",
+  //   "description": "Operações robustas e personalizadas",
+  //   "price": 299,
+  //   "featured": false,
+  //   "image": "https://www.pontotel.com.br/local/wp-content/uploads/2024/07/o-que-e-enterprise.webp",
+  //   "features": [
+  //     "Tudo do Comercial Pro",
+  //     // "Usuários ilimitados",
+  //     "Automações avançadas",
+  //     "Integrações personalizadas",
+  //     "Suporte prioritário"
+  //   ]
+  // },
   // {
   //   "id": "barbearia",
   //   "name": "Barbearia",
@@ -148,18 +148,23 @@ const PricingSection = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto justify-center">
+        <div
+          className="grid gap-8 max-w-6xl mx-auto"
+          style={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          }}
+        >
           {plans.map((plan, index) => (
             <div
               key={plan.name}
               className={`relative group rounded-3xl overflow-hidden border transition-all duration-500 hover:-translate-y-3 ${plan.featured
-                  ? 'border-primary shadow-2xl shadow-primary/20'
-                  : 'border-border'
+                ? 'border-primary shadow-2xl shadow-primary/20'
+                : 'border-border'
                 }`}
             >
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80"
+                className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition-transform duration-700"
                 style={{ backgroundImage: `url(${plan.image})` }}
               />
 
@@ -180,9 +185,11 @@ const PricingSection = () => {
 
               {/* Content */}
               <div className="relative z-10 p-8 flex flex-col h-full">
-                <span className="text-xs uppercase tracking-widest text-primary mb-2">
-                  {plan.segment}
-                </span>
+                <div className="mb-4">
+                  <span className="inline-flex items-center rounded-full bg-white/15 backdrop-blur-lg border border-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+                    {plan.segment}
+                  </span>
+                </div>
 
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {plan.name}
@@ -211,7 +218,7 @@ const PricingSection = () => {
                   ))}
                 </ul>
 
-                <Link to="/app/register" className="mt-auto">
+                <Link to="/app/login" className="mt-auto">
                   <Button
                     className={`w-full ${plan.featured ? 'glow' : ''
                       }`}

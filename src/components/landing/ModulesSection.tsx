@@ -10,27 +10,21 @@ import {
 } from 'lucide-react';
 
 const modules = [
-  {
-    icon: Users,
-    title: 'CRM',
-    description: 'Gerencie clientes, contatos e fluxo de vendas com funil visual e automações.',
-    color: 'bg-blue-500/10 text-blue-500',
-  },
-  {
-    icon: Bot,
-    title: 'Bot de Atendimento',
-    description: 'Automação inteligente de WhatsApp com fluxos personalizados e respostas automáticas.',
-    color: 'bg-green-500/10 text-green-500',
-  },
+  // {
+  //   icon: Bot,
+  //   title: 'Bot de Atendimento',
+  //   description: 'Automação inteligente de WhatsApp com fluxos personalizados e respostas automáticas.',
+  //   color: 'bg-green-500/10 text-green-500',
+  // },
   {
     icon: ShoppingCart,
-    title: 'PDV',
-    description: 'Vendas rápidas, controle de caixa, múltiplas formas de pagamento e emissão de comprovantes.',
+    title: 'Caixa e Vendas',
+    description: 'Vendas rápidas, controle de caixa e múltiplas formas de pagamento.',
     color: 'bg-purple-500/10 text-purple-500',
   },
   {
     icon: BarChart3,
-    title: 'ERP',
+    title: 'Operacional',
     description: 'Produtos, estoque, compras, fornecedores e gestão completa do seu negócio.',
     color: 'bg-orange-500/10 text-orange-500',
   },
@@ -40,24 +34,30 @@ const modules = [
     description: 'Contas a pagar e receber, fluxo de caixa e relatórios financeiros detalhados.',
     color: 'bg-emerald-500/10 text-emerald-500',
   },
-  {
-    icon: Brain,
-    title: 'Inteligência Artificial',
-    description: 'Resumo de conversas, score de clientes, sugestão de respostas e previsão de vendas.',
-    color: 'bg-pink-500/10 text-pink-500',
+    {
+    icon: Users,
+    title: 'Cliente',
+    description: 'Gerencie clientes, contatos e fluxo de vendas com funil visual e automações.',
+    color: 'bg-blue-500/10 text-blue-500',
   },
-  {
-    icon: Zap,
-    title: 'Automação (Em breve)',
-    description: 'Workflows visuais com triggers e ações automáticas para otimizar processos.',
-    color: 'bg-yellow-500/10 text-yellow-500',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Integrações',
-    description: 'WhatsApp, Email, Instagram e Facebook para conectar com suas ferramentas favoritas.',
-    color: 'bg-cyan-500/10 text-cyan-500',
-  },
+  // {
+  //   icon: Brain,
+  //   title: 'Inteligência Artificial',
+  //   description: 'Resumo de conversas, score de clientes, sugestão de respostas e previsão de vendas.',
+  //   color: 'bg-pink-500/10 text-pink-500',
+  // },
+  // {
+  //   icon: Zap,
+  //   title: 'Automação (Em breve)',
+  //   description: 'Workflows visuais com triggers e ações automáticas para otimizar processos.',
+  //   color: 'bg-yellow-500/10 text-yellow-500',
+  // },
+  // {
+  //   icon: MessageSquare,
+  //   title: 'Integrações',
+  //   description: 'WhatsApp, Email, Instagram e Facebook para conectar com suas ferramentas favoritas.',
+  //   color: 'bg-cyan-500/10 text-cyan-500',
+  // },
 ];
 
 const ModulesSection = () => {

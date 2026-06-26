@@ -5,9 +5,9 @@ import { useRef, useEffect } from 'react';
 
 const HeroSection = () => {
   const features = [
-    'CRM completo',
-    'Bot de Atendimento',
-    'PDV integrado',
+    'Estoque',
+    'Fluxo de caixa',
+    'Contas a pagar e receber',
     'Financeiro',
   ];
 
@@ -38,7 +38,10 @@ const HeroSection = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 opacity-0 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-primary">100% White Label</span>
+              <span className="text-sm font-medium text-primary">
+                {/* aqui é sobre o ERP */}
+                Gestão completa de negócios
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 opacity-0 animate-slide-up delay-100">
@@ -50,8 +53,8 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl opacity-0 animate-slide-up delay-200">
-              Seu sistema, sua marca. Plataforma SaaS completa para CRM, Operacional, PDV e 
-              automação de atendimento. Pague apenas pelo que usar.
+              Seu sistema, sua marca. Plataforma completa para Estoque, Caixa, 
+              Contas, etc. Pague apenas pelo que usar.
             </p>
 
             {/* Feature Pills */}
@@ -70,7 +73,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-700">
-              <Link to="/app/register">
+              <Link to="/app/login">
                 <Button size="lg" className="gap-2 glow w-full sm:w-auto hover:scale-105 transition-transform">
                   Começar agora
                   <ArrowRight size={18} />

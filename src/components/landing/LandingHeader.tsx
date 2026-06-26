@@ -45,7 +45,7 @@ const LandingHeader = () => {
                 Entrar
               </Button>
             </Link>
-            <Link to="/app/register" className="opacity-0 animate-fade-in delay-350">
+            <Link to="/app/login" className="opacity-0 animate-fade-in delay-350">
               <Button size="sm" className="glow hover:scale-105 transition-transform">
                 Começar agora
               </Button>
@@ -83,7 +83,7 @@ const LandingHeader = () => {
                     Entrar
                   </Button>
                 </Link>
-                <Link to="/app/register">
+                <Link to="/app/login">
                   <Button className="w-full">
                     Começar agora
                   </Button>
