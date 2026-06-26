@@ -11,7 +11,7 @@ const LandingFooter = () => {
               <img
                 src="/img/logo_gestoriza.png"
                 alt="Gestoriza Logo"
-                width={80}
+                width={150}
                 className="object-contain"
               />
             </Link>
