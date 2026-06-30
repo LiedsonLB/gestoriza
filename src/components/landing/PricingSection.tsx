@@ -37,8 +37,8 @@ const PricingSection = () => {
           email: email || 'Não informado',
           telefone: telefone || 'Não informado',
           mensagem: mensagemTexto
-            ? `${mensagemTexto} | Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
-            : `Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
+            ? `${mensagemTexto} | Interessado em orçamento personalizado`
+            : `Interessado em orçamento personalizado`
         })
       });
 
