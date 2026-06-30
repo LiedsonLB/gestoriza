@@ -15,11 +15,11 @@ const PricingSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!email && !telefone) {
-      setMensagem({ 
-        tipo: 'erro', 
-        texto: '💡 Preencha pelo menos um contato (email ou telefone) para falarmos com você!' 
+      setMensagem({
+        tipo: 'erro',
+        texto: '💡 Preencha pelo menos um contato (email ou telefone) para falarmos com você!'
       });
       return;
     }
@@ -36,33 +36,33 @@ const PricingSection = () => {
           nome: nome || 'Não informado',
           email: email || 'Não informado',
           telefone: telefone || 'Não informado',
-          mensagem: mensagemTexto 
-            ? `Mensagem: ${mensagemTexto} | Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
+          mensagem: mensagemTexto
+            ? `${mensagemTexto} | Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
             : `Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
         })
       });
 
-      setMensagem({ 
-        tipo: 'sucesso', 
-        texto: '✅ Contato salvo! Em breve nossa equipe entrará em contato com uma avaliação personalizada para o seu negócio.' 
+      setMensagem({
+        tipo: 'sucesso',
+        texto: '✅ Contato salvo! Em breve nossa equipe entrará em contato com uma avaliação personalizada para o seu negócio.'
       });
-      
+
       setEmail('');
       setTelefone('');
       setNome('');
       setMensagemTexto('');
 
       setTimeout(() => {
-        document.getElementById('contato-feedback')?.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
+        document.getElementById('contato-feedback')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
         });
       }, 100);
 
     } catch (error) {
-      setMensagem({ 
-        tipo: 'erro', 
-        texto: '❌ Ops! Não foi possível salvar. Tente novamente ou fale conosco pelo WhatsApp.' 
+      setMensagem({
+        tipo: 'erro',
+        texto: '❌ Ops! Não foi possível salvar. Tente novamente ou fale conosco pelo WhatsApp.'
       });
       console.error('Erro ao salvar contato:', error);
     } finally {
@@ -86,7 +86,7 @@ const PricingSection = () => {
           </h2>
 
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Cada negócio é único. Conte-nos sobre o seu e receba uma avaliação 
+            Cada negócio é único. Conte-nos sobre o seu e receba uma avaliação
             sob medida com o melhor custo-benefício.
           </p>
         </div>
@@ -94,6 +94,18 @@ const PricingSection = () => {
         {/* Main Card - Formulário de Contato */}
         <div className="max-w-2xl mx-auto">
           <div className="relative rounded-3xl overflow-hidden border border-border bg-card shadow-xl">
+            {/* Feedback Message */}
+            {mensagem.texto && (
+              <div
+                id="contato-feedback"
+                className={`mt-6 p-4 mx-8 rounded-xl text-center transition-all duration-500 ${mensagem.tipo === 'sucesso'
+                  ? 'bg-success/10 border border-success/20 text-success'
+                  : 'bg-destructive/10 border border-destructive/20 text-destructive'
+                  }`}
+              >
+                <p className="font-medium">{mensagem.texto}</p>
+              </div>
+            )}
             {/* Background Decorativo */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
@@ -117,7 +129,7 @@ const PricingSection = () => {
                   { icon: '💰', text: 'Preço justo' },
                   { icon: '📊', text: 'Sob medida' }
                 ].map((item, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="text-center p-3 rounded-xl bg-muted/50 border border-border"
                   >
@@ -138,7 +150,7 @@ const PricingSection = () => {
                       className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                     />
                   </div>
-                  
+
                   <div className="relative">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <input
@@ -177,8 +189,8 @@ const PricingSection = () => {
                   </span>
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   size="lg"
                   className="w-full gap-2 hover:scale-[1.02] transition-transform"
                   disabled={enviando}
@@ -201,33 +213,19 @@ const PricingSection = () => {
             </div>
           </div>
 
-          {/* Feedback Message */}
-          {mensagem.texto && (
-            <div 
-              id="contato-feedback"
-              className={`mt-6 p-4 rounded-xl text-center transition-all duration-500 ${
-                mensagem.tipo === 'sucesso' 
-                  ? 'bg-success/10 border border-success/20 text-success' 
-                  : 'bg-destructive/10 border border-destructive/20 text-destructive'
-              }`}
-            >
-              <p className="font-medium">{mensagem.texto}</p>
-            </div>
-          )}
-
           {/* Contatos alternativos */}
           <div className="mt-8 text-center">
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground flex-wrap">
               <span>📞 Prefere falar agora?</span>
-              <a 
-                href="tel:+5511999999999" 
+              <a
+                href="tel:+5511999999999"
                 className="text-primary hover:underline font-medium"
               >
                 (11) 99999-9999
               </a>
               <span>ou</span>
-              <a 
-                href="https://wa.me/5511999999999" 
+              <a
+                href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline font-medium inline-flex items-center gap-1"
