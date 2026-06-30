@@ -73,13 +73,13 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-700">
-              <Link to="/app/login">
+              <Link to="/app/dashboard">
                 <Button size="lg" className="gap-2 glow w-full sm:w-auto hover:scale-105 transition-transform">
                   Começar agora
                   <ArrowRight size={18} />
                 </Button>
               </Link>
-              <Link to="/app/login">
+              <Link to="/app/dashboard">
                 <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto hover:scale-105 transition-transform">
                   <Play size={18} />
                   Ver demonstração

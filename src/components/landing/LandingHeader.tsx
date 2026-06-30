@@ -40,14 +40,15 @@ const LandingHeader = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/app/login" className="opacity-0 animate-fade-in delay-300">
+            {/* <Link to="/app/dashboard" className="opacity-0 animate-fade-in delay-300">
               <Button variant="ghost" size="sm" className="hover:scale-105 transition-transform">
                 Entrar
               </Button>
-            </Link>
-            <Link to="/app/login" className="opacity-0 animate-fade-in delay-350">
+            </Link> */}
+            <Link to="/app/dashboard" className="opacity-0 animate-fade-in delay-350">
               <Button size="sm" className="glow hover:scale-105 transition-transform">
-                Começar agora
+                {/* aqui seria um texto de demonstração da plataforma só que sem funcionalidades só uma visualização */}
+                Ver demonstração
               </Button>
             </Link>
           </div>
@@ -78,14 +79,14 @@ const LandingHeader = () => {
                 White Label
               </a>
               <div className="flex flex-col gap-2 pt-4 opacity-0 animate-fade-in delay-250">
-                <Link to="/app/login">
+                {/* <Link to="/app/dashboard">
                   <Button variant="ghost" className="w-full">
                     Entrar
                   </Button>
-                </Link>
-                <Link to="/app/login">
+                </Link> */}
+                <Link to="/app/dashboard">
                   <Button className="w-full">
-                    Começar agora
+                    Teste gratuito
                   </Button>
                 </Link>
               </div>

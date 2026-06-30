@@ -55,9 +55,9 @@ const plans = [
 ];
 
 const invoices = [
-  { id: 1, date: '01/01/2024', amount: 197, status: 'Pago' },
-  { id: 2, date: '01/12/2023', amount: 197, status: 'Pago' },
-  { id: 3, date: '01/11/2023', amount: 197, status: 'Pago' },
+  { id: 1, date: '01/01/2024', amount: 0, status: 'Pago' },
+  { id: 2, date: '01/12/2023', amount: 0, status: 'Pago' },
+  { id: 3, date: '01/11/2023', amount: 0, status: 'Pago' },
 ];
 
 const Billing = () => {
@@ -97,7 +97,7 @@ const Billing = () => {
       {/* Plans */}
       <div className="opacity-0 animate-slide-up delay-200">
         <h2 className="text-lg font-semibold text-foreground mb-4">Alterar plano</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+        {/* <div className="grid md:grid-cols-3 gap-4">
           {plans.map((planOption) => {
             const isCurrentPlan = plan.plan === planOption.id;
             const Icon = planOption.icon;
@@ -154,7 +154,7 @@ const Billing = () => {
               </Card>
             );
           })}
-        </div>
+        </div> */}
       </div>
 
       {/* Invoices */}

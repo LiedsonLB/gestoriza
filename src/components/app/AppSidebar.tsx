@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTenant } from '@/contexts/TenantContext';
 import {
   LayoutDashboard,
@@ -145,6 +145,7 @@ interface AppSidebarProps {
 }
 
 const AppSidebar = ({ isOpen, onToggle }: AppSidebarProps) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const { tenant, hasModule } = useTenant();
   const [openMenus, setOpenMenus] = useState<string[]>(['dashboard']);
@@ -208,7 +209,7 @@ const AppSidebar = ({ isOpen, onToggle }: AppSidebarProps) => {
                 className="hidden md:flex h-8 w-8 text-sidebar-foreground"
                 onClick={onToggle}
               >
-                 <ArrowRight size={16} />
+                <ArrowRight size={16} />
               </Button>
             )}
             {isOpen && (
@@ -344,12 +345,16 @@ const AppSidebar = ({ isOpen, onToggle }: AppSidebarProps) => {
                   <p className="text-sm font-medium text-sidebar-foreground truncate">{tenant.name}</p>
                   <p className="text-xs text-muted-foreground truncate">{tenant.email}</p>
                 </div>
-                <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => {
+                  navigate('/');
+                }}>
                   <LogOut size={16} className="text-muted-foreground" />
                 </Button>
               </div>
             ) : (
-              <Button variant="ghost" size="icon" className="w-full h-8">
+              <Button variant="ghost" size="icon" className="w-full h-8" onClick={() => {
+                navigate('/');
+              }}>
                 <LogOut size={16} className="text-muted-foreground" />
               </Button>
             )}
