@@ -133,7 +133,7 @@ const PricingSection = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <span className="text-sm font-medium text-primary">
-              Planos NeoAcutis
+              Planos Gestoriza
             </span>
           </div>
 
@@ -148,7 +148,7 @@ const PricingSection = () => {
         </div>
 
         {/* Cards */}
-        <div
+        {/* <div
           className="grid gap-8 max-w-6xl mx-auto"
           style={{
             gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
@@ -162,20 +162,15 @@ const PricingSection = () => {
                 : 'border-border'
                 }`}
             >
-              {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition-transform duration-700"
                 style={{ backgroundImage: `url(${plan.image})` }}
               />
 
-              {/* Dark overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
 
-              {/* Hexagon overlay */}
-              {/* /public/img/hex-pattern.svg */}
               <div className="absolute inset-0 bg-[url('/img/hex-pattern.svg')] opacity-20 mix-blend-overlay" />
 
-              {/* Featured badge */}
               {plan.featured && (
                 <div className="absolute top-5 right-5 z-20 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs flex items-center gap-1">
                   <Sparkles size={12} />
@@ -183,7 +178,6 @@ const PricingSection = () => {
                 </div>
               )}
 
-              {/* Content */}
               <div className="relative z-10 p-8 flex flex-col h-full">
                 <div className="mb-4">
                   <span className="inline-flex items-center rounded-full bg-white/15 backdrop-blur-lg border border-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
@@ -230,7 +224,7 @@ const PricingSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

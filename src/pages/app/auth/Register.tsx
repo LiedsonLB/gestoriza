@@ -29,7 +29,7 @@ const Register = () => {
             />
           </div>
           <h1 className="text-2xl font-bold text-foreground">Criar conta</h1>
-          <p className="text-muted-foreground">Comece a usar o <strong className='text-primary'>NeoAcutis</strong></p>
+          <p className="text-muted-foreground">Comece a usar o <strong className='text-primary'>Gestoriza</strong></p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
