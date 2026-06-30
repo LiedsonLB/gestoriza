@@ -1,11 +1,12 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, Send, CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle, ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 const PricingSection = () => {
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
   const [nome, setNome] = useState('');
+  const [mensagemTexto, setMensagemTexto] = useState('');
   const [enviando, setEnviando] = useState(false);
   const [mensagem, setMensagem] = useState({ tipo: '', texto: '' });
 
@@ -35,7 +36,9 @@ const PricingSection = () => {
           nome: nome || 'Não informado',
           email: email || 'Não informado',
           telefone: telefone || 'Não informado',
-          mensagem: `Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
+          mensagem: mensagemTexto 
+            ? `Mensagem: ${mensagemTexto} | Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
+            : `Interessado em orçamento personalizado - ${new Date().toLocaleString('pt-BR')}`
         })
       });
 
@@ -47,6 +50,7 @@ const PricingSection = () => {
       setEmail('');
       setTelefone('');
       setNome('');
+      setMensagemTexto('');
 
       setTimeout(() => {
         document.getElementById('contato-feedback')?.scrollIntoView({ 
@@ -156,6 +160,21 @@ const PricingSection = () => {
                     placeholder="Seu telefone (com DDD)"
                     className="w-full pl-11 pr-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   />
+                </div>
+
+                {/* Campo de Mensagem - OPICIONAL */}
+                <div className="relative">
+                  <MessageCircle className="absolute left-4 top-4 w-4 h-4 text-muted-foreground" />
+                  <textarea
+                    value={mensagemTexto}
+                    onChange={(e) => setMensagemTexto(e.target.value)}
+                    placeholder="Conte um pouco sobre seu negócio (opcional)"
+                    rows={3}
+                    className="w-full pl-11 pr-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+                  />
+                  <span className="absolute right-3 bottom-3 text-xs text-muted-foreground">
+                    {mensagemTexto.length > 0 ? `${mensagemTexto.length} caracteres` : 'Opcional'}
+                  </span>
                 </div>
 
                 <Button 
