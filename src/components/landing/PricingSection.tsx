@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { 
-  Mail, Phone, Send, CheckCircle, MessageCircle, 
-  Play, Sparkles, Users, Clock, Shield, ArrowRight 
+import {
+  Mail, Phone, Send, CheckCircle, MessageCircle,
+  Play, Sparkles, Users, Clock, Shield, ArrowRight
 } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -98,13 +98,13 @@ const PricingSection = () => {
           </div> */}
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Vamos <span className="gradient-text">conversar</span> sobre 
+            Vamos <span className="gradient-text">conversar</span> sobre
             <br />
             <span className="text-foreground">o futuro do seu negócio?</span>
           </h2>
 
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Descubra como a Gestoriza pode transformar sua operação. 
+            Descubra como a Gestoriza pode transformar sua operação.
             Deixe seu contato e agende uma conversa sem compromisso.
           </p>
         </div>
@@ -137,8 +137,8 @@ const PricingSection = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="relative">
+                  <div className="grid md:grid-cols-1 gap-4">
+                    {/* <div className="relative">
                       <input
                         type="text"
                         value={nome}
@@ -146,7 +146,9 @@ const PricingSection = () => {
                         placeholder="Seu nome"
                         className="w-full px-4 py-3.5 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                       />
-                    </div>
+                    </div> */}
+
+                    {/* texto de "ou" */}
 
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -158,6 +160,10 @@ const PricingSection = () => {
                         className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                       />
                     </div>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground text-sm">
+                    <span>ou</span>
                   </div>
 
                   <div className="relative">
@@ -215,23 +221,23 @@ const PricingSection = () => {
             {/* Card: Ver Demonstração */}
             <div className="relative rounded-3xl overflow-hidden border border-border bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8 text-center hover:shadow-xl transition-all duration-500 group cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Play size={32} className="text-primary" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   Veja na prática
                 </h3>
-                
+
                 <p className="text-sm text-muted-foreground mb-6">
                   Explore a plataforma e veja como a Gestoriza pode organizar seu negócio.
                 </p>
-                
-                <Button 
+
+                <Button
                   onClick={handleDemo}
-                  variant="outline" 
+                  variant="outline"
                   className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
                 >
                   Acessar demonstração
@@ -247,15 +253,15 @@ const PricingSection = () => {
                   <span className="text-2xl">💬</span>
                 </div>
               </div>
-              
+
               <h3 className="text-lg font-bold text-foreground mb-1">
                 Prefere WhatsApp?
               </h3>
-              
+
               <p className="text-sm text-muted-foreground mb-4">
                 Fale diretamente com nossa equipe
               </p>
-              
+
               <a
                 href="https://wa.me/5511999999999"
                 target="_blank"
@@ -271,13 +277,12 @@ const PricingSection = () => {
 
         {/* Feedback Message - Movido para baixo do grid */}
         {mensagem.texto && (
-          <div 
+          <div
             id="contato-feedback"
-            className={`max-w-3xl mx-auto mt-8 p-4 rounded-xl text-center transition-all duration-500 ${
-              mensagem.tipo === 'sucesso' 
-                ? 'bg-success/10 border border-success/20 text-success' 
+            className={`max-w-3xl mx-auto mt-8 p-4 rounded-xl text-center transition-all duration-500 ${mensagem.tipo === 'sucesso'
+                ? 'bg-success/10 border border-success/20 text-success'
                 : 'bg-destructive/10 border border-destructive/20 text-destructive'
-            }`}
+              }`}
           >
             <p className="font-medium">{mensagem.texto}</p>
           </div>
